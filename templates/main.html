@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>Image Upload</title> 
+    <link rel="stylesheet" 
+          type="text/css"
+          href=" {{ url_for('static',filename = 'css/style.css')}}" /> 
+</head> 
+  
+<body> 
+    <div id="content"> 
+  
+        <form method="POST" 
+              action="" 
+              enctype="multipart/form-data"> 
+            <input type="file" 
+                   name="uploadfile" 
+                   value="" /> 
+  
+            <div> 
+                <button type="submit"
+                        name="upload"> 
+                  UPLOAD 
+                </button> 
+            </div> 
+        </form> 
+    </div> 
+</body> 
+  
+</html> 
