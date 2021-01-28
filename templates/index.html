@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <style>
+          input[type=submit]{
+              margin-top: 30px;
+              display: block;
+              width: 100%;
+              height: 50px;
+              border: none;
+              outline: none;
+              border-radius: 25px;
+              color: #fff;
+              font-size: 18px;
+              font-weight: 500;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              cursor: pointer;
+              background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+              }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="image">
+          <img src="" alt="">
+        </div>
+<div class="content">
+          <div class="icon">
+<i class="fas fa-cloud-upload-alt"></i></div>
+<div class="text">
+No file chosen, yet!</div>
+</div>
+<div id="cancel-btn">
+<i class="fas fa-times"></i></div>
+<div class="file-name">
+File name here</div>
+</div>
+<button onclick="defaultBtnActive()" name="uploadfile" id="custom-btn">Choose a file</button>
+
+<form id="form" action="/upload" method="post" enctype="multipart/form-data">
+    <input id="submit-btn" type="submit" name="submit" value="UPLOAD">
+    <input id="default-btn" type="file" name="my_image" hidden>
+</form>
+    </div>
+<script>
+      const wrapper = document.querySelector(".wrapper");
+      const fileName = document.querySelector(".file-name");
+      const defaultBtn = document.querySelector("#default-btn");
+      const customBtn = document.querySelector("#custom-btn");
+      const cancelBtn = document.querySelector("#cancel-btn i");
+      const img = document.querySelector("img");
+      let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+      function defaultBtnActive(){
+        defaultBtn.click();
+      }
+      defaultBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            img.src = result;
+            wrapper.classList.add("active");
+          }
+          cancelBtn.addEventListener("click", function(){
+            img.src = "";
+            wrapper.classList.remove("active");
+          })
+          reader.readAsDataURL(file);
+        }
+        if(this.value){
+          let valueStore = this.value.match(regExp);
+          fileName.textContent = valueStore;
+        }
+      });
+    </script>
+
+  </body>
+</html>
