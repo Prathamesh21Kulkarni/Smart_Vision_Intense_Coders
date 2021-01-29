@@ -36,10 +36,17 @@ def upload():
     return render_template('output.html', path= imagePath, cap=caption)
 
 
+<<<<<<< HEAD
 mypath = "static/images"
 for root, dirs, files in os.walk(mypath):
     for file in files:
         os.remove(os.path.join(root, file))
+=======
+# mypath = "static/images"
+# for root, dirs, files in os.walk(mypath):
+#     for file in files:
+#         os.remove(os.path.join(root, file))
+>>>>>>> b79508fbaa225bb2143e65caeefe5f5cdf449d6d
 
 if __name__ == "__main__":
     #port = int(os.environ.get("PORT", 5000))

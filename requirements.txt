@@ -5,9 +5,14 @@ Pillow==7.0.0
 gunicorn==20.0.4
 pipfile==0.0.2
 Jinja2==2.11.2
+<<<<<<< HEAD
 tensorflow-cpu==2.3.0
 opencv-python-headless==4.5.1.48
 gTTS==2.2.1
+=======
+tensorflow==2.3.0
+opencv-python-headless==4.5.1.48
+>>>>>>> b79508fbaa225bb2143e65caeefe5f5cdf449d6d
 
 
 
