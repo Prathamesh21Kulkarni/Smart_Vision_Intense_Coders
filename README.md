@@ -4,7 +4,9 @@ Demo= https://imagecaptiongenerator17.herokuapp.com/
 ![Screenshot (500)](https://user-images.githubusercontent.com/66110778/106308856-50c31000-6287-11eb-9ae8-823e95230c73.png)
 
 
-![Screenshot (500)](https://user-images.githubusercontent.com/66110778/106308856-50c31000-6287-11eb-9ae8-823e95230c73.png)
+
+![Screenshot (501)](https://user-images.githubusercontent.com/66110778/106309063-9e3f7d00-6287-11eb-9947-1921f888fa75.png)
+
 
 
 ![Screenshot (502)](https://user-images.githubusercontent.com/66110778/106308982-7c45fa80-6287-11eb-84fc-17f3c2c8af92.png)
