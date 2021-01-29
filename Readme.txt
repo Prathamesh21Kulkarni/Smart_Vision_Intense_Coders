@@ -7,14 +7,5 @@ License: https://bootstrapmade.com/license/
 
 Demo - https://imagecaptiongenerator17.herokuapp.com/
 
-<img src = "https://github.com/Prathamesh21Kulkarni/Smart_Vision_Intense_Coders/blob/master/static/assets/img/portfolio/sampleImage3.jpg" >
 
-<img src = "Smart_Vision_Intense_Coders/static/assets/img/portfolio/sampleImage3.jpg" >
-
-![image](https://github.com/Prathamesh21Kulkarni/Smart_Vision_Intense_Coders/blob/master/static/assets/img/portfolio/sampleImage3.jpg)
-
-![alt text](https://github.com/Prathamesh21Kulkarni/Smart_Vision_Intense_Coders/blob/master/static/assets/img/portfolio/portfolio-1.jpg)
-
-![alt text](https://github.com/Prathamesh21Kulkarni/Smart_Vision_Intense_Coders/blob/master/static/assets/img/portfolio/portfolio-2.jpg)
-
-![alt text](https://github.com/Prathamesh21Kulkarni/Smart_Vision_Intense_Coders/blob/master/static/assets/img/portfolio/sampleImage3.jpg)
+![sampleImage3](https://user-images.githubusercontent.com/66110778/106301890-45b7b200-627e-11eb-8cbe-ccde74efe818.jpg)
