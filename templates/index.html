@@ -1,60 +1,209 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Image Uploader</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-      <style>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Image Caption Generator</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/favicon_AI.jpg')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/favicon_AI.jpg')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+
+  <style>
           input[type=submit]{
-              margin-top: 30px;
-              display: block;
+              font-family: "Poppins", sans-serif;
               width: 100%;
-              height: 50px;
-              border: none;
-              outline: none;
-              border-radius: 25px;
-              color: #fff;
-              font-size: 18px;
               font-weight: 500;
+              font-size: 14px;
               letter-spacing: 1px;
-              text-transform: uppercase;
-              cursor: pointer;
+              display: inline-block;
+              padding: 12px 32px;
+              border-radius: 10px;
+              transition: 0.3s;
+              line-height: 1;
+              color: #fff;
+              border-color: #000
+              -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s;
+              margin-top: 10px;
+              border: 2px solid #fff;
               background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
               }
       </style>
-  </head>
-  <body>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/">Intense Coders</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Results</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#footer">Contact</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="#uploadImage" class="get-started-btn scrollto">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
     <div class="container">
-      <div class="wrapper">
-        <div class="image">
-          <img src="" alt="">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Smart Vision using Image Captioning</h1>
+          <h2>We are team of Intense Coders making website for captioning the image.</h2>
+          <div class="d-lg-flex">
+            <a href="#uploadImage" class="btn-get-started scrollto">Get Started</a>
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Watch Video <i class="icofont-play-alt-2"></i></a>
+          </div>
         </div>
-<div class="content">
-          <div class="icon">
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{{url_for('static', filename='assets/img/hero-img.png')}}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Cliens Section ======= -->
+    <section id="cliens" class="cliens section-bg">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{url_for('static', filename='assets/img/clients/tensorflow.jpg')}}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{url_for('static', filename='assets/img/clients/keras.png')}}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{url_for('static', filename='assets/img/clients/openCV.png')}}" class="img-fluid" alt="" >
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{url_for('static', filename='assets/img/clients/flask.png')}}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{url_for('static', filename='assets/img/clients/html.png')}}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{url_for('static', filename='assets/img/clients/css.png')}}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Cliens Section -->
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Project</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              Image caption Generator is a popular research area of Artificial Intelligence that deals with image understanding and a language description for that image. Generating well-formed sentences requires both syntactic and semantic understanding of the language.  
+            </p>
+            <!--<ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </ul>-->
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Being able to describe the content of an image using accurately formed sentences is a very challenging task, but it could also have a great impact, by helping visually impaired people better understand the content of images.
+            </p>
+            <a href="https://towardsdatascience.com/image-captioning-in-deep-learning-9cd23fb4d8d2" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+<!-- ======= Image captionong ======= -->
+    <section id="uploadImage" class="uploadImage">
+
+    <div class="content1"> <h3> Select the file </h3></div>
+      <div class="container1">
+      <div class="wrapper1">
+        <div class="image1">
+          <img class="img1" src="" alt="">
+        </div>
+<div class="content1">
+          <div class="icon1">
 <i class="fas fa-cloud-upload-alt"></i></div>
 <div class="text">
 No file chosen, yet!</div>
 </div>
 <div id="cancel-btn">
 <i class="fas fa-times"></i></div>
-<div class="file-name">
-File name here</div>
+<div class="file-name1"> File name here </div>
 </div>
-<button onclick="defaultBtnActive()" name="uploadfile" id="custom-btn">Choose a file</button>
+<button onclick="defaultBtnActive()" class="btn-learn-more" name="uploadfile" id="custom-btn">Choose a file</button>
 
-<form id="form" action="/upload" method="post" enctype="multipart/form-data">
-    <input id="submit-btn" type="submit" name="submit" value="UPLOAD">
+<form id="form"  action="/upload" method="post" enctype="multipart/form-data">
+    <input id="submit-btn" type="submit" name="submit" value="CAPTION THIS">    
     <input id="default-btn" type="file" name="my_image" hidden>
 </form>
     </div>
+
 <script>
-      const wrapper = document.querySelector(".wrapper");
-      const fileName = document.querySelector(".file-name");
+      const wrapper = document.querySelector(".wrapper1");
+      const fileName = document.querySelector(".file-name1");
       const defaultBtn = document.querySelector("#default-btn");
       const customBtn = document.querySelector("#custom-btn");
       const cancelBtn = document.querySelector("#cancel-btn i");
-      const img = document.querySelector("img");
+      const img = document.querySelector(".img1");
       let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
       function defaultBtnActive(){
         defaultBtn.click();
@@ -79,7 +228,391 @@ File name here</div>
           fileName.textContent = valueStore;
         }
       });
-    </script>
+  </script>
+    </section>
 
-  </body>
+
+   <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3>Domain - <strong>Artificial Intelligence</strong></h3>
+              <p>
+                Artificial intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions.
+              </p>
+            </div>
+
+            <div class="accordion-list">
+              <h3>Technology Used</h3>
+              <ul>
+                <li>
+                  <a data-toggle="collapse" class="collapse" href="#accordion-list-1"><span>01</span> Keras <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-parent=".accordion-list">
+                    <p>
+                      Keras is an open-source software library that provides a Python interface for artificial neural networks. Keras acts as an interface for the TensorFlow library. Designed to enable fast experimentation with deep neural networks, it focuses on being user-friendly, modular, and extensible.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#accordion-list-2" class="collapsed"><span>02</span> TensorFlow <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-parent=".accordion-list">
+                    <p>
+                      TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#accordion-list-3" class="collapsed"><span>03</span> OpenCV <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-parent=".accordion-list">
+                    <p>
+                      OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("{{url_for('static', filename='assets/img/AI.jpg')}}");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+            <img src="{{url_for('static', filename='assets/img/skills.png')}}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <h3>Skills</h3>
+            <p class="font-italic">
+              Following skills were required to develope this project -
+            </p>
+
+            <div class="skills-content">
+
+              <div class="progress">
+                <span class="skill">Python<i class="val">60%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">HTML & CSS <i class="val">30%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">JavaScript <i class="val">10%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">Tool used - <strong> Pycharm </strong> <i class="val">100%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Glimpse of caption generator</h2>
+          <p>These are some of the images that were correctly captioned by the <strong>Image Caption Genertor</strong>. It gives the accuracy upto 80% but sometimes it fails to give correct or nearby captions. </p>
+        </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-app">App</li>
+          <li data-filter=".filter-card">Card</li>
+          <li data-filter=".filter-web">Web</li>
+        </ul>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/soccer.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption - </h4>
+              <p>two children playing soccer</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/soccer.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/sampleImage3.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>a dog jumps to catch a ball nearby . . .</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/sampleImage3.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/cricket.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption - </h4>
+              <p>the three player is playing with a frisbee at a man</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/cricket.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/sampleImage6.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>two men are playing in a grassy field . . . .</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/sampleImage6.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/portfolio-1.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>group of people are standing in front of building</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/portfolio-1.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/portfolio-2.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>a people riding on track</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/portfolio-2.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/portfolio-3.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>two children are playing on the street</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/portfolio-3.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/sampleImage7.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>a man is riding a bike in the air</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/sampleImage7.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/sampleImage4.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>a brown dog is running on the grass</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/sampleImage4.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="{{url_for('static', filename='assets/img/portfolio/sampleImage8.jpg')}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Caption -</h4>
+              <p>a snowboarder is skiing in the air</p>
+              <a href="{{url_for('static', filename='assets/img/portfolio/sampleImage.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="{{url_for('static', filename='assets/img/team/pranav.jpeg')}}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Pranav Kushare</h4>
+                <span>B-Tech <br>Instrumentation Engineering</span>
+                <p>Vishwakarma Institute of Technology</p>
+                <div class="social">
+                  <a href="https://www.facebook.com/pranav.kushare.1042/"><i class="ri-facebook-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/pranav-kushare-ab217418a"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="{{url_for('static', filename='assets/img/team/harsh.jpeg')}}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Harsh Kulkarni</h4>
+                <span>B-Tech <br>Computer Engineering</span>
+                <p>Vishwakarma Institute of Technology</p>
+                <div class="social">
+                  <a href="https://www.facebook.com/harsh.kulkarni.1705"><i class="ri-facebook-fill"></i></a>
+                  <a href="https://www.instagram.com/harsh_kulkarni_1705/"><i class="ri-instagram-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/harsh-kulkarni-57ab021a1"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="{{url_for('static', filename='assets/img/team/prathamesh.png')}}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Prathamesh Kulkarni</h4>
+                <span>B-Tech <br>Computer Engineering</span>
+                <p>Vishwakarma Institute of Technology</p>
+                <div class="social">
+                  <a href="https://www.instagram.com/prathamesh_kulkarni21/?hl=en"><i class="ri-instagram-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/prathamesh-kulkarni-b803661b2"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Intense Coders</h3>
+            <p>
+              Vishwakarma Institute of Technology<br>
+              Bibwewadi, Pune<br>
+              India <br><br>
+              <strong>Phone:</strong> +91 9975141959<br>
+              <strong>Email:</strong> intensecoders@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Results</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#team">Team</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Interested Domains</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">App Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">machine Learning</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Artificial Intelligence</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Contact us on any of the below mentioned social platforms</p>
+            <div class="social-links mt-3">
+              <a href="https://www.facebook.com/pranav.kushare.1042/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/harsh_kulkarni_1705/"" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/prathamesh-kulkarni-b803661b2" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>INTENSE CODERS</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='assets/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/waypoints/jquery.waypoints.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/venobox/venobox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+</body>
+
 </html>
